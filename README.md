@@ -6,5 +6,5 @@ cat ../ignore.json
 ["LibA","LibB","JsonSerializable","ArrayObject","Exception"]
 
 比如
-use LibA\C|ClassD;
+use LibA\C\ClassD;
 就可以命中白名单
