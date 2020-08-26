@@ -73,7 +73,7 @@ function nsCheck($sDir,$aWhiteList){
                        $sNamespace=$full;
                    }
                    //print_r($aFull);
-                   if (empty($aNsMap[$sNamespace])&& !in_array($aFull[0],$aWhiteList)) {
+                   if (empty($aNsMap[$sNamespace])&& !in_array($aFull[0],$aWhiteList)&&$full!="\\") {
                        echo "\033[34m \n global import $full not fund in $sDir\n \033[0m";
                    }
                }

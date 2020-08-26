@@ -52,7 +52,7 @@ function getImport($file){
 function getCall($file){
     $aFullNs=[];
     $aShortNs=[];
-    $sCmdFullNs="cat $file |grep -v 'use ' |grep -v 'namespace' |grep -oE \"[a-z0-9A-Z_\\\]*\\\\\\+[a-z0-9A-z_\\\]*\" |uniq |sort";
+    $sCmdFullNs="cat $file |grep -v 'use ' |grep -v 'namespace' |grep -oE \"[a-z0-9A-Z_\\\]*\\\\\\+[a-z0-9A-z_\\\]+\" |uniq |sort";
    // echo $sCmdFullNs;
     exec($sCmdFullNs,$aFullNs);
     exec("cat $file |grep -oE \"[a-z0-9A-Z_\\]*::\" |awk -F':' '{print $1}' |uniq |sort",$aShortNs);
